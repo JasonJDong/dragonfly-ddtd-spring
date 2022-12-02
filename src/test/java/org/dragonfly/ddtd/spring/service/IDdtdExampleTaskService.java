@@ -1,0 +1,16 @@
+package org.dragonfly.ddtd.spring.service;
+
+import org.dragonfly.ddtd.spring.domain.DdtdExampleTaskDO;
+import com.baomidou.mybatisplus.extension.service.IService;
+
+/**
+ * <p>
+ *  服务类
+ * </p>
+ *
+ * @author jian.dong1
+ * @since 2022-02-08
+ */
+public interface IDdtdExampleTaskService extends IService<DdtdExampleTaskDO> {
+
+}

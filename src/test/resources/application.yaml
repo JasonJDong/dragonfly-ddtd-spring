@@ -1,0 +1,23 @@
+dragonfly-ddtd:
+  # 127.0.0.1:2181
+  zookeeper-addr: rdzk1.dmall.com:2181,rdzk2.dmall.com:2181,rdzk3.dmall.com:2181
+  namespace: example
+  downgrade:
+    threads-count: 8
+  performance:
+    memory-load: 95
+spring:
+  datasource:
+    url: jdbc:h2:mem:example_db;MODE=MySQL
+    username:
+    password:
+    driver-class-name: org.h2.Driver
+  jpa:
+    show-sql: true
+  sql:
+    init:
+      schema-locations: classpath:sql/schema.sql
+#      data-locations: classpath:sql/data.sql
+      platform: h2
+  redis:
+    host:

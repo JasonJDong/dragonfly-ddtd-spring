@@ -1,0 +1,58 @@
+{
+  "groups": [
+    {
+      "name": "dragonfly-ddtd",
+      "type": "org.dragonfly.ddtd.conf.GlobalProperties",
+      "sourceType": "org.dragonfly.ddtd.spring.DdtdBootstrapConfiguration",
+      "sourceMethod": "getGlobalProperties()"
+    }
+  ],
+  "properties": [
+    {
+      "name": "dragonfly-ddtd.base-retry-sleep-time",
+      "type": "java.lang.Integer",
+      "sourceType": "org.dragonfly.ddtd.conf.GlobalProperties"
+    },
+    {
+      "name": "dragonfly-ddtd.downgrade",
+      "type": "org.dragonfly.ddtd.conf.DowngradeProperties",
+      "sourceType": "org.dragonfly.ddtd.conf.GlobalProperties"
+    },
+    {
+      "name": "dragonfly-ddtd.group",
+      "type": "java.lang.String",
+      "sourceType": "org.dragonfly.ddtd.conf.GlobalProperties"
+    },
+    {
+      "name": "dragonfly-ddtd.namespace",
+      "type": "java.lang.String",
+      "sourceType": "org.dragonfly.ddtd.conf.GlobalProperties"
+    },
+    {
+      "name": "dragonfly-ddtd.pause-scan-mills",
+      "type": "java.lang.Long",
+      "sourceType": "org.dragonfly.ddtd.conf.GlobalProperties"
+    },
+    {
+      "name": "dragonfly-ddtd.performance",
+      "type": "org.dragonfly.ddtd.conf.PerformanceProperties",
+      "sourceType": "org.dragonfly.ddtd.conf.GlobalProperties"
+    },
+    {
+      "name": "dragonfly-ddtd.retry-count",
+      "type": "java.lang.Integer",
+      "sourceType": "org.dragonfly.ddtd.conf.GlobalProperties"
+    },
+    {
+      "name": "dragonfly-ddtd.starting-check",
+      "type": "java.lang.Boolean",
+      "sourceType": "org.dragonfly.ddtd.conf.GlobalProperties"
+    },
+    {
+      "name": "dragonfly-ddtd.zookeeper-addr",
+      "type": "java.lang.String",
+      "sourceType": "org.dragonfly.ddtd.conf.GlobalProperties"
+    }
+  ],
+  "hints": []
+}
