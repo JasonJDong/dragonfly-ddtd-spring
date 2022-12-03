@@ -6,6 +6,7 @@ import org.dragonfly.ddtd.framework.inspect.DefaultTaskInspector;
 import org.dragonfly.ddtd.framework.inspect.ITaskInspect;
 import org.dragonfly.ddtd.framework.report.DefaultTaskReporter;
 import org.dragonfly.ddtd.framework.report.ITaskReporter;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Bean;
@@ -31,16 +32,19 @@ public class DdtdBootstrapConfiguration {
     }
 
     @Bean
+    @ConditionalOnMissingBean
     public ITaskReporter getTaskReporter() {
         return new DefaultTaskReporter();
     }
 
     @Bean
+    @ConditionalOnMissingBean
     public ITaskInspect getTaskInspect(TaskZooKeeperFactory taskZooKeeperFactory) {
         return new DefaultTaskInspector(taskZooKeeperFactory);
     }
 
     @Bean
+    @ConditionalOnMissingBean
     public DdtdAutoFactoryRegistrar getAutoFactoryRegistrar(
             ApplicationContext applicationContext,
             GlobalProperties globalProperties,

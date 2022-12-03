@@ -96,7 +96,7 @@ public class TestDistributionTask {
     @Test
     @SuppressWarnings("unchecked")
     @DisplayName("自动注册任务工厂测试")
-    public void AutoFactoryRegistrarTest() {
+    public void AutoFactoryRegistrarTest() throws Exception {
         final DefaultTaskFactory<DdtdExampleTaskDO> factory = (DefaultTaskFactory<DdtdExampleTaskDO>) autoFactoryRegistrar.getFactory(TestManagedTaskWorker.class);
         final ITaskWorker<DdtdExampleTaskDO> worker1 = createWorker1(taskDistributionDataAccessor, null);
         final ITaskWorker<DdtdExampleTaskDO> worker2 = createWorker1(taskDistributionDataAccessor, null);

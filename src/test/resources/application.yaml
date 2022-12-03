@@ -1,6 +1,6 @@
 dragonfly-ddtd:
   # 127.0.0.1:2181
-  zookeeper-addr: rdzk1.dmall.com:2181,rdzk2.dmall.com:2181,rdzk3.dmall.com:2181
+  zookeeper-addr: 127.0.0.1:2181
   namespace: example
   downgrade:
     threads-count: 8

@@ -137,8 +137,9 @@ public class DdtdAutoFactoryRegistrar implements InitializingBean, DisposableBea
      * @param factoryName name to find it
      * @param taskWorker task worker instance
      * @param <T> type of worker
+     * @throws Exception any exception
      */
-    public <T> void register(String factoryName, ITaskWorker<T> taskWorker) {
+    public <T> void register(String factoryName, ITaskWorker<T> taskWorker) throws Exception{
         final Class<ITaskWorker> workerClass = (Class<ITaskWorker>)taskWorker.getClass();
         final Map<String, DefaultTaskFactory<?>> existsFactories = factories.computeIfAbsent(workerClass, (key) -> Maps.newHashMap());
         if (existsFactories.containsKey(factoryName)) {
@@ -154,18 +155,21 @@ public class DdtdAutoFactoryRegistrar implements InitializingBean, DisposableBea
      * </p>
      * @param taskWorker task worker instance
      * @param <T> type of worker
+     * @throws Exception any exception
      */
-    public <T> void register(ITaskWorker<T> taskWorker) {
+    public <T> void register(ITaskWorker<T> taskWorker) throws Exception{
         this.register(taskWorker.getName(), taskWorker);
     }
 
-    private DefaultTaskFactory newFactory(ITaskWorker taskWorker) {
-        return new DefaultTaskFactory<>(
+    private DefaultTaskFactory newFactory(ITaskWorker taskWorker) throws Exception {
+        final DefaultTaskFactory taskFactory = new DefaultTaskFactory<>(
                 globalProperties,
                 taskZooKeeperFactory,
                 taskWorker,
                 taskInspect,
                 taskReporter
         );
+        taskFactory.initialize();
+        return taskFactory;
     }
 }
